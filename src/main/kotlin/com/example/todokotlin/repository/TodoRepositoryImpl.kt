@@ -70,7 +70,7 @@ class TodoRepositoryImpl: TodoRepository {
     }
 
     override fun findOne(index: Int): Todo? {
-        return todoDataBase.todoList.first { it.index == index }
+        return todoDataBase.todoList.first { it.index == index } // 만약 비어있는데 조회를 날리면 오류가 날 것이다 -> try~catch로 묶어주거나 null을 반환하는 새로운 메소드를 제작
     }
 
     override fun findAll(): MutableList<Todo> {
